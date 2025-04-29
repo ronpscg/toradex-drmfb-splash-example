@@ -1,0 +1,14 @@
+#
+# This as an example. See some considerations in the shell script or the repo's README.md
+# 
+[Unit]
+Description=Show an Alternative Boot Screen Ron fbsplash
+After=systemd-vconsole-setup.service systemd-udev-trigger.service systemd-udevd.service
+
+[Service]
+ExecStart=/etc/splash-work/splash.sh
+Type=forking
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
